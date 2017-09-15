@@ -32,7 +32,6 @@ class HomeController extends Controller
         if (\Auth::guest()) {
             return view('adminlte::auth.login');
         } else {
-
             return view('adminlte::home');
         }
 

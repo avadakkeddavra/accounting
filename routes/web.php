@@ -16,6 +16,14 @@ Route::get('/', 'HomeController@index');
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home','HomeController@index');
+    Route::get('/home','HomeController@index')->name('home');
+
+    Route::get('/products','ProductsController@index')->name('products');
+    /**
+     *
+     * Routes for users operations
+     *
+     * */
     Route::get('/users','UserController@index');
+    Route::get('/user/{user}','UserController@showUserPage')->name('single_user');
 });

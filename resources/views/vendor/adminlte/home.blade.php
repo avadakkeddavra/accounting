@@ -6,9 +6,30 @@
 
 
 @section('main-content')
+	@if(Session::has('error'))
+	<section class="errors">
+
+		<div class="row" style="margin-left: 0;">
+			<!-- /.col -->
+			<div class="col-md-12">
+				<div class="info-box">
+					<span class="info-box-icon bg-red"><i class="fa fa-exclamation"></i></span>
+
+					<div class="info-box-content">
+						<span class="info-box-text">{{ Session::get('error') }}</span>
+					</div>
+					<!-- /.info-box-content -->
+				</div>
+				<!-- /.info-box -->
+			</div>
+			<!-- /.col -->
+		</div>
+
+	</section>
+	@endif
 	<div class="container-fluid spark-screen">
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-8 ">
 
 				<!-- Default box -->
 				<div class="box">

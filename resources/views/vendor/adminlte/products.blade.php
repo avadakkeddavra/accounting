@@ -11,7 +11,7 @@
             <div class="col-md-8 col-md-offset-2">
 
                 <!-- Default box -->
-                <div class="box">
+                <div class="box box-primary">
                     <div class="box-header with-border">
                         <h3 class="box-title">Users</h3>
 
@@ -26,33 +26,35 @@
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
-                                    <tr>
-                                        <td>Имя</td>
-                                        <td>Роль</td>
-                                        <td>Email</td>
-                                        <td>Статус</td>
-                                        <td>Дата создания</td>
-                                    </tr>
+                                <tr>
+                                    <td>Название</td>
+                                    <td>Цена</td>
+                                    <td>Статус</td>
+                                    <td>Дата создания</td>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($users as $user)
+                                @foreach($products as $product)
                                     <tr>
-                                        <td><a href="{{url('user')}}/{{$user->id}}">{{$user->name}}</a></td>
-                                        <td>{{$user->role}}</td>
-                                        <td>{{$user->email}}</td>
-                                        <td>@if($user->trashed())
+                                        <td>{{$product->name}}</td>
+                                        <td>{{$product->price}} $</td>
+                                        <td>@if($product->trashed())
                                                 <div class="label label-danger">trashed</div>
                                             @else
                                                 <div class="label label-success">active</div>
                                             @endif
                                         </td>
-                                        <td>{{$user->created_at}}</td>
+                                        <td>{{$product->created_at}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
 
                             </table>
                         </div>
+
+                    </div>
+                    <div class="pagintaion_nav" style="text-align: center;">
+                        {{ $products->links() }}
                     </div>
                     <!-- /.box-body -->
                 </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -12,6 +12,8 @@ class User extends Authenticatable
 
     const ROLE_USER = 1;
     const ROLE_ADMIN = 2;
+
+    protected $table = "users";
     /**
      * The attributes that are mass assignable.
      *
@@ -29,6 +31,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token','deleted_at',
     ];
+
     public function isAdmin()
     {
         return (int) $this->role === User::ROLE_ADMIN;

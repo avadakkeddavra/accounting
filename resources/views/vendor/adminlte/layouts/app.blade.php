@@ -43,7 +43,7 @@ desired effect
         @include('adminlte::layouts.partials.contentheader')
 
         <!-- Main content -->
-        <section class="content">
+        <section class="content" style="padding-left: 0px;">
             <!-- Your Page Content Here -->
             @yield('main-content')
         </section><!-- /.content -->

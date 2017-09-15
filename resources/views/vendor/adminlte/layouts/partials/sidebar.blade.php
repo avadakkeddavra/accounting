@@ -34,9 +34,11 @@
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li><a href="{{url('products')}}" data-url="products-page"><i class='fa icon-layers'></i> <span>Products</span></a></li>
             @if ( Auth::user()->isAdmin())
                 <li><a href="{{url('users')}}" data-url="users-page"><i class='fa fa-user-o'></i> <span>Users</span></a></li>
             @endif
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
